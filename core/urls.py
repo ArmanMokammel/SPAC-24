@@ -14,5 +14,7 @@ urlpatterns = [
     path('api/get_session_statuses/', GetSessionStatusAjax.as_view(), name="get_session_statuses"),
     path('api/update_participant_session', UpdateParticipantSessionAjax.as_view(), name="update_participant_session"),
     # path('import_csv/', import_csv, name='import_csv'),
-    path('gen_qr/', gen)
+    path('gen_qr/', gen),
+    #send email to participant
+    path('send_email/',send_email,name="send_email"),
 ]

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email</title>
+
+</head>
+<body>
+    <div class="email button">
+        <form method="POST" onsubmit="return confirmSubmission()">
+            {% csrf_token %}
+            <input type="submit" value="Send Email" name="send_email">
+        </form>
+    </div>
+    
+</body>
+<script>
+    function confirmSubmission() {
+        // Show a confirmation alert
+        const isConfirmed = confirm("Are you sure you want to send the email?");
+        
+        // Return true to submit the form if confirmed, false otherwise
+        return isConfirmed;
+    }
+</script>
+</html>

@@ -141,3 +141,17 @@ def gen(request):
    generate_qr()
 
    return JsonResponse({'message':'success'})
+
+@login_required
+def send_email(request):
+
+    if request.method == "POST":
+
+        if request.POST.get('send_email'):
+
+            if Core.send_email(request,'sakib.sami@northsouth,edu','sahamimsak@gmail.com','skmdsakib2186@gmail.com'):
+                print("Sendd")
+            else:
+                print("not sned")
+
+    return render(request,'send_email.html')
